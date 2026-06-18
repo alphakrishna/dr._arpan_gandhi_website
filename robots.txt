@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://drarpangandhi.org/sitemap.xml
