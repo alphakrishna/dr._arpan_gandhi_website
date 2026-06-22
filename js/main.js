@@ -1,4 +1,4 @@
-// Mobile menu
+// ─── Mobile menu ─────────────────────────────────────────────────────────────
 const toggle = document.getElementById('menu-toggle');
 const menu = document.getElementById('mobile-menu');
 
@@ -7,6 +7,7 @@ if (toggle && menu) {
     menu.classList.toggle('open');
   });
 
+  // Close menu when any nav link is tapped (avoids menu staying open after route change)
   document.querySelectorAll('#mobile-menu a').forEach(a => {
     a.addEventListener('click', () => {
       menu.classList.remove('open');
@@ -14,11 +15,14 @@ if (toggle && menu) {
   });
 }
 
-// Active nav via IntersectionObserver
+// ─── Active nav highlight via IntersectionObserver ───────────────────────────
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('[data-nav-link]');
 
 if (sections.length && navLinks.length) {
+  // Top inset (-80px) clears the fixed nav bar so the section isn't considered
+  // "active" while it's hidden behind it. Bottom inset (-50%) means the section
+  // must reach the viewport midpoint before its nav link activates.
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -38,11 +42,12 @@ if (sections.length && navLinks.length) {
   sections.forEach(section => observer.observe(section));
 }
 
-// Back to top
+// ─── Back to top button ───────────────────────────────────────────────────────
 const backToTop = document.getElementById('back-to-top');
 
 if (backToTop) {
   window.addEventListener('scroll', () => {
+    // Show once the user has scrolled past the fold
     if (window.scrollY > 400) {
       backToTop.classList.add('visible');
     } else {
@@ -55,10 +60,12 @@ if (backToTop) {
   });
 }
 
-// Ticker — pause on touch hold, resume on release
+// ─── Achievement ticker — pause on touch hold, resume on release ──────────────
 const tickerTrack = document.querySelector('.ticker-track');
 
 if (tickerTrack) {
+  // { passive: true } tells the browser this handler never calls preventDefault(),
+  // so it can start scrolling immediately without waiting — prevents scroll jank
   tickerTrack.addEventListener('touchstart', () => {
     tickerTrack.style.animationPlayState = 'paused';
   }, { passive: true });
@@ -67,12 +74,14 @@ if (tickerTrack) {
     tickerTrack.style.animationPlayState = 'running';
   }, { passive: true });
 
+  // touchcancel fires when the touch sequence is interrupted (e.g. incoming call,
+  // notification overlay) without a touchend — resume here or the ticker freezes
   tickerTrack.addEventListener('touchcancel', () => {
     tickerTrack.style.animationPlayState = 'running';
   }, { passive: true });
 }
 
-// Contact form
+// ─── Contact form — async Formspree submit ────────────────────────────────────
 const form = document.getElementById('contactForm');
 
 if (form) {
@@ -81,15 +90,21 @@ if (form) {
     const btn = form.querySelector('button[type="submit"]');
     btn.textContent = 'Sending...';
     btn.disabled = true;
+
     try {
+      // FormData serialises all named inputs without manual JSON encoding.
+      // Accept: application/json tells Formspree to return JSON instead of
+      // redirecting the page (its default HTML response behaviour).
       const res = await fetch(form.action, {
         method: 'POST',
         body: new FormData(form),
         headers: { 'Accept': 'application/json' },
       });
+
       if (res.ok) {
         btn.textContent = 'Sent!';
         form.reset();
+        // Reset button label after a brief confirmation window
         setTimeout(() => {
           btn.textContent = 'Send Message';
           btn.disabled = false;
@@ -99,6 +114,7 @@ if (form) {
         btn.disabled = false;
       }
     } catch {
+      // Network failure (offline, CORS block, etc.)
       btn.textContent = 'Error — try again';
       btn.disabled = false;
     }

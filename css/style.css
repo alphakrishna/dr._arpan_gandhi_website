@@ -37,6 +37,7 @@ a { text-decoration: none; color: inherit; }
 /* ===== BASE ===== */
 html { scroll-behavior: smooth; }
 
+/* flex column + main { flex:1 } keeps the footer pinned to the bottom on short pages */
 body {
   font-family: var(--font-body);
   color: var(--slate-800);
@@ -130,6 +131,7 @@ main { flex: 1; }
 
 .menu-toggle svg { width: 1.5rem; height: 1.5rem; }
 
+/* height can't animate to/from auto; max-height 0→24rem is the CSS workaround */
 .mobile-menu {
   border-top: 1px solid var(--slate-100);
   background-color: #fff;
@@ -196,6 +198,7 @@ main { flex: 1; }
 .hero-photo-wrapper { position: relative; padding: 1.5rem 2rem 2.5rem 1rem; }
 
 /* Healing green organic blob — main backdrop */
+/* calc offsets nudge the blob so it peeks above & beside the photo without clipping */
 .hero-photo-accent {
   position: absolute;
   top: calc(-3.5rem + 70px);
@@ -254,7 +257,7 @@ main { flex: 1; }
 .ticker-track {
   display: flex;
   width: max-content;
-  will-change: transform;
+  will-change: transform; /* promotes to GPU compositor layer for smooth 60fps animation */
   -webkit-animation: ticker-scroll 28s linear infinite;
   animation: ticker-scroll 28s linear infinite;
 }
@@ -289,6 +292,7 @@ main { flex: 1; }
   to   { -webkit-transform: translateX(-50%); transform: translateX(-50%); }
 }
 
+/* Track HTML is duplicated; -50% scrolls exactly one copy, creating a seamless loop */
 @keyframes ticker-scroll {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
@@ -370,6 +374,7 @@ main { flex: 1; }
 .service-card:hover .service-card-link svg { transform: translateX(0.25rem); }
 
 /* ===== ABOUT ===== */
+/* scroll-margin-top offsets the anchor target so the fixed nav (80px) doesn't obscure the heading */
 .about {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -857,7 +862,7 @@ main { flex: 1; }
   border: 1px solid var(--slate-200);
   border-radius: 1.25rem;
   padding: 2rem;
-  transform: translateY(10%);
+  transform: translateY(10%); /* visually drops form card below the section midline for depth */
 }
 
 .contact-form { border-top: none; padding-top: 0; }
@@ -986,6 +991,7 @@ main { flex: 1; }
 }
 
 /* ===== BACK TO TOP ===== */
+/* Hidden on mobile (display:none) — shown via the ≥768px breakpoint below */
 .back-to-top {
   position: fixed;
   bottom: 2rem;
@@ -1257,6 +1263,7 @@ main { flex: 1; }
 
 .blog-post-card:hover h2 { color: var(--accent); }
 
+/* -webkit-line-clamp is the only cross-browser way to truncate after N lines of text */
 .blog-post-card p {
   color: var(--slate-500);
   font-size: 0.9375rem;
@@ -1415,6 +1422,7 @@ main { flex: 1; }
   .not-found .big-number { font-size: 8rem; }
 }
 
+/* Shift background 100px right on mobile to reframe the photo subject on narrow screens */
 @media (max-width: 767px) {
   .contact {
     background:
