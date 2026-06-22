@@ -1,0 +1,14 @@
+# Claude Code local state
+.claude/
+
+# Private project documents (contracts, content drafts, planning)
+Proejct_Docs/
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+*.sublime-workspace
