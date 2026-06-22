@@ -55,6 +55,23 @@ if (backToTop) {
   });
 }
 
+// Ticker — pause on touch hold, resume on release
+const tickerTrack = document.querySelector('.ticker-track');
+
+if (tickerTrack) {
+  tickerTrack.addEventListener('touchstart', () => {
+    tickerTrack.style.animationPlayState = 'paused';
+  }, { passive: true });
+
+  tickerTrack.addEventListener('touchend', () => {
+    tickerTrack.style.animationPlayState = 'running';
+  }, { passive: true });
+
+  tickerTrack.addEventListener('touchcancel', () => {
+    tickerTrack.style.animationPlayState = 'running';
+  }, { passive: true });
+}
+
 // Contact form
 const form = document.getElementById('contactForm');
 

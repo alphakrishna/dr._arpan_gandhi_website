@@ -1,185 +1,267 @@
-# Dr. Arpan Gandhi — Website Rebuild Checklist
+# Dr. Arpan Gandhi — Website Rebuild Plan
 
-> Last verified: 2026-06-20
-> Today: June 20 · Phase 1 deadline: June 23–24 · Phase 2 deadline: June 30
-
----
-
-## Milestone 1 — Phase 1 Deployment `due June 23–24` `4 days`
-
-> Goal: A complete, live website on GoDaddy with all current content plus the achievements ticker. New dedicated pages come in Phase 2.
-
-### Landing Page (`index.html`)
-- [ ] D1: Achievements ticker strip added below hero
-  - [ ] 7 items: `29+ Years` · `SRL & Agilus Diagnostics` · `200+ Mentored` · `4 M&A Integrations` · `COVID RT-PCR Labs` · `CAP Auditor since 1999` · `NABL Quality Systems`
-  - [ ] Scrolls left continuously via CSS animation
-  - [ ] Pauses on hover
-  - [ ] Seamless loop — no visible gap or jump
-  - [ ] Font size ≥ 14px on mobile
-- [ ] Hero photo loads correctly
-- [ ] All 6 service cards render and link correctly
-- [ ] About section renders with Executive Portfolio link opening in new tab
-- [ ] Journey timeline — all 5 milestones visible
-- [ ] Contact form submits to Formspree without error
-- [ ] Mobile hamburger menu opens and closes
-
-### Blog
-- [x] `/blog/` listing page works
-- [x] All 3 blog posts open and render
-- [x] Back link on each post returns to `/blog/`
-
-### Cross-site
-- [x] `robots.txt` present and allows indexing
-- [ ] `sitemap.xml` includes all current URLs (index + blog listing + 3 posts)
-- [ ] No broken links across all pages
-- [ ] Site loads on mobile without horizontal scroll
-
-### Deployment
-- [ ] All files uploaded to GoDaddy hosting
-- [ ] Site live at `https://drarpangandhi.org/`
-- [ ] HTTPS working (SSL active)
-- [ ] Hero image, about image, blog images all load on live URL
+> **Go-live deadline:** June 30 (Phase 2)
+> **Local preview:** `python -m http.server 8080` → `http://localhost:8080`
+> **Tone:** Happy · Confident · Credible · Intelligent
 
 ---
 
-## Milestone 2 — Phase 2 Complete `due June 30` `10 days`
+## Site Map
 
-> Goal: New dedicated pages live, LinkedIn posts section added, SEO + Google Analytics in place, final polish done.
-
-### New Pages (all 4 must be created)
-
-#### `/journey.html` — My Journey
-- [ ] File created with nav + footer shell
-- [ ] `<title>` = "My Journey — Dr. Arpan Gandhi"
-- [ ] `<meta name="description">` present and under 160 characters
-- [ ] Exactly one `<h1>`
-- [ ] Timeline — 5 milestones with SRL & Agilus named
-- [ ] "Leverage this experience for" bullet list present
-- [ ] Future of Diagnostics — closing reflection section present
-
-#### `/profile.html` — Professional Profile
-- [ ] File created with nav + footer shell
-- [ ] `<title>` = "Professional Profile — Dr. Arpan Gandhi"
-- [ ] `<meta name="description">` present and under 160 characters
-- [ ] Exactly one `<h1>`
-- [ ] About narrative (2 paragraphs from content doc)
-- [ ] Why Work With Me section present
-- [ ] Selected Highlights — 6 bullet points present
-- [ ] 6 Areas of Focus displayed as cards (not a table)
-- [ ] Board & Advisory philosophy block present
-- [ ] Looking Ahead paragraph present
-- [ ] Executive Portfolio link opens in new tab
-
-#### `/consulting.html` — Diagnostics Consulting
-- [ ] File created with nav + footer shell
-- [ ] `<title>` = "Diagnostics Consulting — Dr. Arpan Gandhi"
-- [ ] `<meta name="description">` present and under 160 characters
-- [ ] Exactly one `<h1>`
-- [ ] Intro (3 paragraphs) present
-- [ ] 5 service areas each with heading + bullet list
-  - [ ] Laboratory Strategy & Growth
-  - [ ] Laboratory Operations & Performance Improvement
-  - [ ] Quality Systems & Accreditation
-  - [ ] Laboratory Setup & Expansion
-  - [ ] Diagnostic Transformation & Future Readiness
-- [ ] Quality Systems block (NABL, CAP, CAPA, SOPs listed)
-- [ ] Lab Operations block (Common Challenges list included)
-- [ ] Who I Work With — 4 client types present
-- [ ] Consulting philosophy present
-- [ ] CTA links to `/#contact`
-
-#### `/academic.html` — Academic & Collaboration
-- [ ] File created with nav + footer shell
-- [ ] `<title>` = "Academic & Collaboration — Dr. Arpan Gandhi"
-- [ ] `<meta name="description">` present and under 160 characters
-- [ ] Exactly one `<h1>`
-- [ ] Mentorship section (200+ professionals) present
-- [ ] Research & Innovation section present
-- [ ] Board & Advisory intro section present
-- [ ] Collaboration form present and submits to Formspree
-- [ ] Form fields: Name, Email, Organisation, Area of Interest (dropdown), Message
+| Page | URL | Purpose | Status |
+|------|-----|---------|--------|
+| Landing | `/` | Funnel — hook → credibility → convert | In progress |
+| Journey | `/journey.html` | Full career story with photos | ✅ Done |
+| Profile | `/profile.html` | Who he is in depth | Built, unverified |
+| Consulting | `/consulting.html` | Services detail | To build |
+| Academic | `/academic.html` | Mentorship + collaboration form | To build |
+| Blog | `/blog/` | Thought leadership (3 posts) | Existing |
 
 ---
 
-### Landing Page Restructure (`index.html`)
-> Slim the landing page down once new pages exist to hold the detail.
+## Landing Page — Funnel Structure
 
-- [ ] Hero tagline updated to: "Building Quality-Driven, Future-Ready Healthcare and Diagnostic Organizations"
-- [ ] Services section reduced from 6 cards → 3 cards (Diagnostics Consulting · Board & Advisory · Healthcare Strategy)
-- [ ] Each card links to its dedicated page — not `/#journey` or `/#about`
-- [ ] Full About section removed — replaced with 1-line teaser + "Learn more →" to `/profile.html`
-- [ ] Full Journey timeline removed — replaced with pull quote + "Read my story →" to `/journey.html`
-- [ ] LinkedIn cards section added (see below)
-- [ ] Contact section slimmed to email + LinkedIn + button only (full form removed to `/academic.html`)
-- [ ] Final section order: Hero → Ticker → What I Do → Teaser → LinkedIn → Contact
-
-### LinkedIn Posts Section (`index.html`)
-- [ ] Section added with heading "Recent Thinking"
-- [ ] 3 cards — each has: avatar, name, date, post excerpt (2–3 lines), "View on LinkedIn →" link
-- [ ] Cards link to real LinkedIn post URLs *(blocked — needs 3 URLs from Dr. Gandhi)*
-- [ ] Cards stack to single column on mobile
-- [ ] No external JS dependency
+```
+HERO          → Who am I?         (name · tagline · photo · 2 lines)
+TICKER        → Quick proof       (scrolling achievements) ✅
+WHAT I DO     → What do I do?     (3 cards → dedicated pages)
+LINKEDIN      → Why trust me?     (3 posts visible in one view)
+HOW I HELP    → How can I help?   (short paragraph + 1 CTA)
+CONTACT       → Convert           (clean form — name · email · message)
+```
 
 ---
 
-### Nav Update — all 9 files
-- [ ] `index.html`
-- [ ] `profile.html`
-- [ ] `journey.html`
-- [ ] `consulting.html`
-- [ ] `academic.html`
-- [ ] `blog/index.html`
-- [ ] `blog/labs-need-leaders.html`
-- [ ] `blog/career-pathways-laboratory-medicine.html`
-- [ ] `blog/diagnostic-networks-india.html`
-
-Nav on every page must read: `HOME · PROFILE · CONSULTING · JOURNEY · ACADEMIC · BLOG · CONTACT`
-- [ ] Desktop nav shows all 7 links
-- [ ] Mobile hamburger shows all 7 links
-- [ ] No broken `/#about` or `/#journey` anchors pointing to removed sections
+## Milestone 1 — Inner Pages Complete
 
 ---
 
-### SEO + Google Analytics
+### Step 1 — Ticker ✅
+
+- [x] Ticker strip added to `index.html` below hero
+- [x] 7 items: 29+ Years · SRL & Agilus · 200+ Mentored · 4 M&A · COVID Labs · CAP Auditor · NABL
+- [x] CSS animation scrolls left continuously
+- [x] Animation pauses on hover / touch hold
+- [x] Seamless loop (items duplicated, -50% translate)
+- [x] `-webkit-` prefixes for iOS/Android Safari
+
+**Verify:**
+- [x] Ticker visible below hero on homepage
+- [x] Items scroll smoothly
+- [x] Hover — pauses; release — resumes
+- [x] Mobile — scrolling (not static)
+
+---
+
+### Step 2 — `/journey.html` ✅
+
+- [x] File created with nav/footer shell
+- [x] Title = "My Journey — Dr. Arpan Gandhi"
+- [x] Meta description under 160 characters
+- [x] Exactly one `<h1>`
+- [x] 5 milestone sections with photos (alternating layout)
+- [x] SRL Diagnostics and Agilus Diagnostics named
+- [x] "Leverage this experience for" bullet list
+- [x] Future of Diagnostics closing section
+- [x] Floating back-home arrow button (fixed position)
+
+**Verify:**
+- [x] Page loads with nav and footer
+- [x] Tab title reads "My Journey — Dr. Arpan Gandhi"
+- [x] All 5 milestones visible with photos
+- [x] SRL and Agilus named by name
+- [x] Leverage section at the bottom
+- [x] Click HOME in nav — returns to homepage
+
+---
+
+### Step 3 — `/profile.html`
+
+- [x] File created with nav/footer shell
+- [x] Title = "Professional Profile — Dr. Arpan Gandhi"
+- [x] Meta description under 160 characters
+- [x] Exactly one `<h1>`
+- [x] About narrative — 2 paragraphs
+- [x] Why Work With Me section
+- [x] 6 Selected Highlights
+- [x] 6 Areas of Focus cards with pastel backgrounds
+- [x] Board & Advisory philosophy block
+- [x] Looking Ahead paragraph
+- [x] Executive Portfolio link (opens Google Doc)
+
+**Verify:**
+- [x] Open `/profile.html` — page loads
+- [x] Tab title reads "Professional Profile — Dr. Arpan Gandhi"
+- [x] Scroll — 6 focus cards visible with colour backgrounds
+- [x] Click "Executive Portfolio" — Google Doc opens in new tab
+- [x] On mobile — cards stack in single column
+
+---
+
+### Step 4 — `/consulting.html`
+
+- [x] File created with nav/footer shell
+- [x] Title = "Diagnostics Consulting — Dr. Arpan Gandhi"
+- [x] Meta description under 160 characters
+- [x] Exactly one `<h1>`
+- [x] Intro — 2–3 paragraphs
+- [x] Service area: Laboratory Strategy & Growth (with bullets)
+- [x] Service area: Laboratory Operations & Performance Improvement (with bullets)
+- [x] Service area: Quality Systems & Accreditation — NABL · CAP · CAPA · SOPs (with bullets)
+- [x] Service area: Laboratory Setup & Expansion (with bullets)
+- [x] Service area: Diagnostic Transformation & Future Readiness (with bullets)
+- [x] Who I Work With — 4 client types
+- [x] Consulting philosophy paragraph
+- [x] CTA button → `/#contact`
+
+**Verify:**
+- [ ] Open `/consulting.html` — page loads
+- [ ] Tab title reads "Diagnostics Consulting — Dr. Arpan Gandhi"
+- [ ] Scroll — all 5 service headings visible
+- [ ] "NABL", "CAP", "CAPA" visible
+- [ ] Click CTA button — lands on homepage contact section
+
+---
+
+### Step 5 — `/academic.html`
+
+- [x] File created with nav/footer shell
+- [x] Title = "Academic & Collaboration — Dr. Arpan Gandhi"
+- [x] Meta description under 160 characters
+- [x] Exactly one `<h1>`
+- [x] Mentorship section — "200+" mentioned
+- [x] Research & Innovation section
+- [x] Board & Advisory intro section
+- [x] Collaboration form: Name · Email · Organisation · Area of Interest · Message
+- [ ] Form action → Formspree endpoint *(blocked — see below)*
+
+**Verify:**
+- [ ] Open `/academic.html` — page loads
+- [ ] Tab title reads "Academic & Collaboration — Dr. Arpan Gandhi"
+- [ ] "200+" visible in mentorship section
+- [ ] Fill form and submit — "Sent!" appears
+- [ ] Check inbox — message arrived
+
+---
+
+## Milestone 2 — Landing Page Funnel
+
+---
+
+### Step 6 — Hero Update
+
+- [x] Tagline kept as-is (confirmed by client)
+- [x] Hero photo and blob backdrop intact
+- [x] 2-line descriptor — no more than 2 lines
+
+**Verify:**
+- [x] Open `/` — hero loads with updated tagline
+- [x] Photo and green blob visible
+- [ ] No text overflow on mobile
+
+---
+
+### Step 7 — What I Do (3 Cards)
+
+- [ ] Reduced from 6 cards to 3 cards
+- [ ] Card 1: Diagnostics Consulting → `/consulting.html`
+- [ ] Card 2: Academic & Mentorship → `/academic.html`
+- [ ] Card 3: Advisory & Strategy → `/profile.html`
+- [ ] Each card: title + 1-line description + arrow link
+
+**Verify:**
+- [ ] Only 3 cards visible
+- [ ] Click each — lands on correct page
+- [ ] On mobile — cards stack vertically
+
+---
+
+### Step 8 — LinkedIn Credibility Strip ✅
+
+- [x] 3 LinkedIn post URLs confirmed from Dr. Gandhi
+- [x] 3 post cards visible in one viewport on desktop
+- [x] Each card: excerpt (2–3 lines) + "View on LinkedIn →" link
+- [x] Cards link to correct posts in new tab
+- [x] On mobile — cards stack vertically
+
+**Verify:**
+- [x] 3 cards visible side by side on desktop
+- [x] Click each link — correct post opens on LinkedIn
+- [x] On mobile — cards stack cleanly
+
+---
+
+### Step 9 — How Can I Help + Contact
+
+- [x] "How Can I Help" paragraph (3–4 lines) + 1 CTA button
+- [x] Contact section: Name · Email · Message · Send button
+- [ ] Formspree endpoint confirmed *(blocked — see below)*
+- [x] Email · Phone · LinkedIn direct links visible
+
+**Verify:**
+- [ ] Section visible below LinkedIn strip
+- [ ] Fill and submit form — "Sent!" appears
+- [ ] Email and LinkedIn links open correctly
+
+---
+
+## Milestone 3 — Polish & Deploy
+
+---
+
+### Step 10 — Nav Update (all pages)
+
+- [ ] `index.html` nav updated
+- [ ] `profile.html` nav updated
+- [ ] `journey.html` nav updated
+- [ ] `consulting.html` nav updated
+- [ ] `academic.html` nav updated
+- [ ] `blog/index.html` nav updated
+- [ ] `blog/labs-need-leaders.html` nav updated
+- [ ] `blog/career-pathways-laboratory-medicine.html` nav updated
+- [ ] `blog/diagnostic-networks-india.html` nav updated
+- [ ] Nav order: HOME · CONSULTING · JOURNEY · PROFILE · ACADEMIC · BLOG · CONTACT
+- [ ] No broken `/#about` or `/#journey` anchors remaining
+
+**Verify:**
+- [ ] Open each page — nav shows all links
+- [ ] On mobile — hamburger opens, all links show, closes after tap
+
+---
+
+### Step 11 — SEO + Google Analytics
+
 - [ ] Every page has a unique `<title>`
 - [ ] Every page has `<meta name="description">` under 160 characters
 - [ ] Every page has exactly one `<h1>`
-- [ ] No skipped heading levels (H1 → H2 → H3 only — never H1 → H3)
 - [ ] All `<img>` tags have descriptive `alt` text
-- [ ] Internal links wired: consulting ↔ profile ↔ journey
-- [ ] `sitemap.xml` updated — all 7 page URLs included
-- [ ] Google Analytics tracking snippet added to every page `<head>`
+- [ ] `sitemap.xml` updated with all page URLs
+- [ ] Google Analytics tag in every page `<head>`
+
+**Verify:**
+- [ ] Browser tab on each page — all titles unique
+- [ ] View source — search `G-` — GA tag present
 
 ---
 
-### Final Checks Before June 30 Handoff
-- [ ] All pages tested on mobile (Chrome DevTools — iPhone SE + Pixel 5)
-- [ ] All external links open in new tab with `rel="noopener noreferrer"`
-- [ ] Contact form tested end-to-end (submission reaches inbox)
-- [ ] LinkedIn card links verified to open correct posts
-- [ ] No console errors on any page
-- [ ] Site speed acceptable (images load under 3s on 4G)
+### Step 12 — Final Handoff + Deploy
+
+- [ ] Upload all files to GoDaddy
+- [ ] Site opens at `https://drarpangandhi.org/`
+- [ ] SSL padlock visible
+
+**Verify:**
+- [ ] Open every page on a real phone
+- [ ] Submit collaboration form — arrives in inbox
+- [ ] Click every external link — opens in new tab
+- [ ] F12 on each page — no red console errors
 
 ---
 
-## Blocked — Needs Dr. Gandhi
+## Blocked — Waiting on Dr. Gandhi
 
 | Item | Blocks |
 |------|--------|
-| 3 LinkedIn post URLs | LinkedIn cards section |
-| Profile page photo (same as hero.png or different?) | `/profile.html` |
-| Nav label preference — "PROFILE" or "ABOUT"? | Nav update (all 9 files) |
-
----
-
-## Content Source Map
-
-| Page | Content from |
-|------|-------------|
-| `/` landing | Homepage › Hero + Areas of Focus (top 3) + Let's Connect |
-| `/profile.html` | Homepage › About + Why Work With Me + Highlights + Areas of Focus + Looking Ahead; Board & Advisory › Philosophy |
-| `/consulting.html` | Diagnostics Consulting (full); Quality Systems (full); Lab Operations (full) |
-| `/journey.html` | Existing `index.html` journey section; Future of Diagnostics (full) |
-| `/academic.html` | Board & Advisory Services (intro); CLAUDE.md mentorship facts |
-
-> All content sourced from: `Proejct_Docs/DrGandhi_Professional_Website_Content.md`
+| Formspree endpoint (replace `xcontact`) | Step 5 + Step 9 |
+| 3 LinkedIn post URLs | Step 8 |
+| Nav label — "PROFILE" or "ABOUT"? | Step 10 |
