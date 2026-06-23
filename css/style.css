@@ -807,7 +807,7 @@ main { flex: 1; }
   scroll-margin-top: 6rem;
   background:
     linear-gradient(rgba(20,40,30,0.5), rgba(20,40,30,0.5)),
-    url('/images/form img.jpeg') center -100px/cover no-repeat;
+    url('../images/form img.jpeg') center -100px/cover no-repeat;
 }
 
 .contact-grid {
@@ -1434,6 +1434,6 @@ main { flex: 1; }
   .contact {
     background:
       linear-gradient(rgba(20,40,30,0.5), rgba(20,40,30,0.5)),
-      url('/images/form img.jpeg') calc(50% + 100px) -100px/cover no-repeat;
+      url('../images/form img.jpeg') calc(50% + 100px) -100px/cover no-repeat;
   }
 }
