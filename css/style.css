@@ -169,23 +169,23 @@ main { flex: 1; }
 
 /* ===== HERO ===== */
 .hero {
-  padding-top: 5rem;
-  padding-bottom: 2rem;
+  padding-top: 4.5rem;
+  padding-bottom: 1.25rem;
   background: linear-gradient(150deg, #e8f4ee 0%, #e9f3f9 50%, #ffffff 80%);
 }
 
 .hero-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: 1rem;
   align-items: center;
 }
 
 .hero h1 {
-  font-size: 1.875rem;
+  font-size: 1.625rem;
   line-height: 1.2;
   font-weight: 700;
   color: var(--slate-900);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero h1 .highlight { color: var(--accent); }
@@ -195,7 +195,7 @@ main { flex: 1; }
 
 .hero-photo { display: flex; justify-content: center; }
 
-.hero-photo-wrapper { position: relative; padding: 1.5rem 2rem 2.5rem 1rem; }
+.hero-photo-wrapper { position: relative; padding: 1rem 1.5rem 1.75rem 0.75rem; }
 
 /* Healing green organic blob — main backdrop */
 /* calc offsets nudge the blob so it peeks above & beside the photo without clipping */
@@ -241,7 +241,7 @@ main { flex: 1; }
 .hero-photo-wrapper img {
   position: relative;
   z-index: 1;
-  width: 14rem;
+  width: 12rem;
   border-radius: 1rem;
   object-fit: cover;
   filter: brightness(0.96) contrast(1.02) saturate(0.88);
