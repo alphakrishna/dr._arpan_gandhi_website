@@ -198,7 +198,7 @@ main { flex: 1; }
 
 .hero-tagline .highlight { color: var(--accent); }
 
-.hero-sub { color: var(--slate-500); font-size: 0.9375rem; margin: 1rem 0 0; }
+.hero-sub { color: var(--slate-500); font-size: 0.8rem; margin: 0.5rem 0 0; }
 
 .mobile-br { display: block; }
 @media (min-width: 1024px) { .mobile-br { display: none; } }
@@ -1477,11 +1477,27 @@ main { flex: 1; }
   .hero-photo { margin-right: 0; }
 }
 
-/* Very small phones — tighten font and photo slightly */
+/* Very small phones (320–359px) — tighten font and photo slightly */
 @media (max-width: 359px) {
   .hero-name { font-size: 1.0625rem; }
   .hero-tagline { font-size: 1.0625rem; }
   .hero-photo { width: 58%; }
+}
+
+/* Tiny phones (≤ 319px — Galaxy Fold inner, old 320px devices) */
+@media (max-width: 319px) {
+  .hero { padding-top: 5rem; }
+  .hero-name { font-size: 0.9375rem; }
+  .hero-tagline { font-size: 0.9375rem; }
+  .hero-photo { width: 52%; }
+  .hero .container { padding-left: 0.875rem; }
+}
+
+/* Large phones (430–767px — iPhone Plus/Pro Max, Galaxy Ultra) */
+@media (min-width: 430px) and (max-width: 767px) {
+  .hero { padding-top: 6rem; }
+  .hero-name { font-size: 1.375rem; }
+  .hero-tagline { font-size: 1.375rem; }
 }
 
 /* Tablet — keep float layout, bump size */
@@ -1507,7 +1523,7 @@ main { flex: 1; }
   }
   .hero-name { grid-area: name; font-size: 1.75rem; }
   .hero-tagline { grid-area: tagline; font-size: 1.625rem; }
-  .hero-sub { grid-area: sub; align-self: end; }
+  .hero-sub { display: block; grid-area: sub; align-self: end; color: var(--slate-500); font-size: 0.9375rem; margin: 1rem 0 0; }
   .hero-photo { float: none; width: auto; margin: 0; grid-area: photo; display: flex; justify-content: flex-end; }
   .hero-photo-wrapper { padding: 1.5rem 2rem 0 1rem; }
   .hero-photo-wrapper img { width: 26rem; height: auto; max-height: none; }
