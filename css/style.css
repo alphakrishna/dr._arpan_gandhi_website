@@ -170,32 +170,43 @@ main { flex: 1; }
 /* ===== HERO ===== */
 .hero {
   padding-top: 5.5rem;
-  padding-bottom: 1rem;
-  background: linear-gradient(150deg, #e8f4ee 0%, #e9f3f9 50%, #ffffff 80%);
+  padding-bottom: 0;
+  background: linear-gradient(150deg, #e4f5ec 0%, #e8f2fb 55%, #ffffff 100%);
 }
 
 .hero-grid {
-  display: grid;
-  gap: 0.75rem;
-  align-items: center;
+  display: block;
+  overflow: hidden;
 }
 
-.hero h1 {
-  font-size: 1.5rem;
-  line-height: 1.2;
+.hero-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
   font-weight: 700;
   color: var(--slate-900);
-  margin-bottom: 0.75rem;
+  margin: 0;
+  line-height: 1.25;
 }
 
-.hero h1 .highlight { color: var(--accent); }
+.hero-tagline {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--slate-900);
+  margin: 0 0 0.375rem;
+}
 
-.hero-sub { color: var(--slate-500); font-size: 1.125rem; }
+.hero-tagline .highlight { color: var(--accent); }
+
+.hero-sub { color: var(--slate-500); font-size: 0.9375rem; margin: 1rem 0 0; }
+
+.mobile-br { display: block; }
+@media (min-width: 1024px) { .mobile-br { display: none; } }
 .hero-sub .highlight { color: var(--accent); font-weight: 500; }
 
-.hero-photo { display: flex; justify-content: center; }
+.hero-photo { float: right; width: 63%; margin: 0 0 0.5rem 0.375rem; }
 
-.hero-photo-wrapper { position: relative; padding: 1rem 1.5rem 1.75rem 0.75rem; }
+.hero-photo-wrapper { position: relative; padding: 0; }
 
 /* Healing green organic blob — main backdrop */
 /* calc offsets nudge the blob so it peeks above & beside the photo without clipping */
@@ -238,12 +249,20 @@ main { flex: 1; }
   pointer-events: none;
 }
 
+/* Hide decorative blobs on mobile — too large for small photo column */
+.hero-photo-accent { display: none; }
+.hero-photo-wrapper::before { display: none; }
+.hero-photo-wrapper::after { display: none; }
+
 .hero-photo-wrapper img {
   position: relative;
   z-index: 1;
-  width: 12rem;
-  border-radius: 1rem;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  border-radius: 0.75rem;
   object-fit: cover;
+  object-position: top center;
   filter: brightness(0.96) contrast(1.02) saturate(0.88);
 }
 
@@ -1399,12 +1418,6 @@ main { flex: 1; }
   .nav-links { display: flex; }
   .menu-toggle { display: none; }
 
-  .hero { padding-top: 7rem; padding-bottom: 2rem; }
-  .hero-grid { grid-template-columns: 1fr 28rem; gap: 3rem; }
-  .hero h1 { font-size: 2.25rem; line-height: 1.2; }
-  .hero-photo { justify-content: flex-end; }
-  .hero-photo-wrapper img { width: 26rem; }
-
   .services { padding-top: 3rem; padding-bottom: 4rem; }
   .services h2 { font-size: 2.25rem; }
   .services-grid { grid-template-columns: 1fr 1fr; }
@@ -1458,4 +1471,46 @@ main { flex: 1; }
       linear-gradient(rgba(20,40,30,0.5), rgba(20,40,30,0.5)),
       url('../images/form img.jpeg') calc(50% + 100px) -100px/cover no-repeat;
   }
+
+  /* Remove right padding so hero photo sits flush to screen edge */
+  .hero .container { padding-right: 0; }
+  .hero-photo { margin-right: 0; }
+}
+
+/* Very small phones — tighten font and photo slightly */
+@media (max-width: 359px) {
+  .hero-name { font-size: 1.0625rem; }
+  .hero-tagline { font-size: 1.0625rem; }
+  .hero-photo { width: 58%; }
+}
+
+/* Tablet — keep float layout, bump size */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero { padding-top: 7rem; }
+  .hero-name { font-size: 1.5rem; }
+  .hero-tagline { font-size: 1.5rem; }
+  .hero-photo { width: 50%; }
+  .hero .container { padding-right: 0; }
+  .hero-photo { margin-right: 0; }
+}
+
+/* Desktop — switch to side-by-side grid */
+@media (min-width: 1024px) {
+  .hero { padding-top: 7rem; padding-bottom: 0; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 28rem;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "name photo" "tagline photo" "sub photo";
+    gap: 0.5rem 3rem;
+    align-items: start;
+  }
+  .hero-name { grid-area: name; font-size: 1.75rem; }
+  .hero-tagline { grid-area: tagline; font-size: 1.625rem; }
+  .hero-sub { grid-area: sub; align-self: end; }
+  .hero-photo { float: none; width: auto; margin: 0; grid-area: photo; display: flex; justify-content: flex-end; }
+  .hero-photo-wrapper { padding: 1.5rem 2rem 0 1rem; }
+  .hero-photo-wrapper img { width: 26rem; height: auto; max-height: none; }
+  .hero-photo-wrapper::before { display: block; }
+  .hero-photo-wrapper::after { display: block; }
 }
