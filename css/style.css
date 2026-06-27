@@ -240,7 +240,7 @@ main { flex: 1; }
 
 /* Trustworthy teal dot grid — decorative, bottom-right */
 .hero-photo-wrapper::after {
-  content: '';
+  content: none;
   position: absolute;
   width: 5rem;
   height: 5rem;
@@ -252,10 +252,7 @@ main { flex: 1; }
   pointer-events: none;
 }
 
-/* Hide decorative blobs on mobile — too large for small photo column */
 .hero-photo-accent { display: none; }
-.hero-photo-wrapper::before { display: none; }
-.hero-photo-wrapper::after { display: none; }
 
 .hero-photo-wrapper img {
   position: relative;
@@ -1550,6 +1547,6 @@ main { flex: 1; }
   .hero-photo { float: none; width: auto; margin: 0; grid-area: photo; display: flex; justify-content: flex-end; }
   .hero-photo-wrapper { padding: 1.5rem 2rem 0 1rem; }
   .hero-photo-wrapper img { width: 26rem; height: auto; max-height: none; }
-  .hero-photo-wrapper::before { display: block; }
-  .hero-photo-wrapper::after { display: block; }
+  .hero-photo-wrapper::before { content: ''; display: block; }
+  .hero-photo-wrapper::after { content: ''; display: block; }
 }
