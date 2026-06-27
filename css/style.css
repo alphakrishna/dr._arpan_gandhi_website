@@ -193,7 +193,7 @@ main { flex: 1; }
   line-height: 1.25;
   font-weight: 700;
   color: var(--slate-900);
-  margin: 0 0 0.375rem;
+  margin: 10px 0 0.375rem;
 }
 
 .hero-tagline .highlight { color: var(--accent); }
@@ -202,6 +202,9 @@ main { flex: 1; }
 
 .mobile-br { display: block; }
 @media (min-width: 1024px) { .mobile-br { display: none; } }
+.hero-line { display: block; margin-bottom: 10px; }
+.hero-line:last-child { margin-bottom: 0; }
+.hero-pipe { color: var(--slate-400); font-weight: 300; }
 .hero-sub .highlight { color: var(--accent); font-weight: 500; }
 
 .hero-photo { float: right; width: 63%; margin: 0 0 0.5rem 0.375rem; }
@@ -1495,8 +1498,6 @@ main { flex: 1; }
       url('../images/form img.jpeg') calc(50% + 100px) -100px/cover no-repeat;
   }
 
-  /* Remove right padding so hero photo sits flush to screen edge */
-  .hero .container { padding-right: 0; }
   .hero-photo { margin-right: 0; }
 }
 
@@ -1529,7 +1530,6 @@ main { flex: 1; }
   .hero-name { font-size: 1.5rem; }
   .hero-tagline { font-size: 1.5rem; }
   .hero-photo { width: 50%; }
-  .hero .container { padding-right: 0; }
   .hero-photo { margin-right: 0; }
 }
 
