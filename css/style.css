@@ -1079,6 +1079,29 @@ main { flex: 1; }
   max-width: 52rem;
 }
 
+/* ===== CONSULTING ILLUSTRATION ROWS ===== */
+.consulting-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+.consulting-row.alt .consulting-row__art { order: -1; }
+.consulting-row__art svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem;
+}
+@media (max-width: 767px) {
+  .consulting-row { grid-template-columns: 1fr; gap: 1.25rem; }
+  .consulting-row__art { order: -1; }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .consulting-row { gap: 2rem; }
+}
+
 .page-section .body-text p {
   color: var(--slate-600);
   font-size: 1.0625rem;
