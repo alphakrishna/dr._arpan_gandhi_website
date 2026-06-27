@@ -35,7 +35,7 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* ===== BASE ===== */
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 /* flex column + main { flex:1 } keeps the footer pinned to the bottom on short pages */
 body {
@@ -47,6 +47,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 main { flex: 1; }
@@ -171,7 +172,7 @@ main { flex: 1; }
 .hero {
   padding-top: 5.5rem;
   padding-bottom: 0;
-  background: linear-gradient(150deg, #e4f5ec 0%, #e8f2fb 55%, #ffffff 100%);
+  background: linear-gradient(180deg, #e4f5ec 0%, #e8f2fb 55%, #ffffff 100%);
 }
 
 .hero-grid {
@@ -851,6 +852,34 @@ main { flex: 1; }
   text-shadow: 0 1px 8px rgba(0,0,0,0.8);
 }
 
+.contact-direct {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-bottom: 1.75rem;
+}
+
+.contact-direct-item {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.8);
+  transition: color 0.2s;
+}
+
+.contact-direct-item:hover { color: var(--accent-light); }
+
+.contact-direct-item svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
 .contact-promise {
   display: flex;
   flex-direction: column;
@@ -1492,10 +1521,19 @@ main { flex: 1; }
   .contact {
     background:
       linear-gradient(rgba(20,40,30,0.5), rgba(20,40,30,0.5)),
-      url('../images/form img.jpeg') calc(50% + 100px) -100px/cover no-repeat;
+      url('../images/form img.jpeg') calc(50% + 120px) -59px/cover no-repeat;
+    padding-bottom: 4rem;
   }
 
+  .contact-form-wrap { transform: none; }
+
   .hero-photo { margin-right: 0; }
+
+  .journey-teaser h2 { font-size: 1.5rem; }
+  .journey-teaser-stats { gap: 0.75rem 1.5rem; flex-wrap: wrap; }
+  .journey-stat { flex: 0 0 auto; }
+  .journey-stat .stat-number { font-size: 1.75rem; }
+  .journey-teaser-photo img { max-width: 100%; }
 }
 
 /* Very small phones (320–359px) — tighten font and photo slightly */
@@ -1549,4 +1587,11 @@ main { flex: 1; }
   .hero-photo-wrapper img { width: 26rem; height: auto; max-height: none; }
   .hero-photo-wrapper::before { content: ''; display: block; }
   .hero-photo-wrapper::after { content: ''; display: block; }
+
+  .contact {
+    background-color: #14281e;
+    background:
+      linear-gradient(rgba(20,40,30,0.5), rgba(20,40,30,0.5)),
+      url('../images/form img.jpeg') center -150px / 80% auto no-repeat;
+  }
 }
