@@ -89,6 +89,59 @@ if (tickerTrack) {
   }, { passive: true });
 }
 
+// ─── Blog carousels ───────────────────────────────────────────────────────────
+document.querySelectorAll('.blog-carousel-outer').forEach(outer => {
+  const track = outer.querySelector('.blog-carousel-track');
+  const cards = Array.from(outer.querySelectorAll('.blog-card'));
+  const prevBtn = outer.querySelector('.carousel-btn-prev');
+  const nextBtn = outer.querySelector('.carousel-btn-next');
+  const dotsWrap = outer.querySelector('.carousel-dots');
+  const controls = outer.querySelector('.carousel-controls');
+
+  if (!cards.length) return;
+
+  let current = 0;
+
+  function visibleCount() {
+    if (window.innerWidth >= 1024) return Math.min(3, cards.length);
+    if (window.innerWidth >= 768)  return Math.min(2, cards.length);
+    return 1;
+  }
+
+  function maxSlide() { return Math.max(0, cards.length - visibleCount()); }
+
+  function buildDots() {
+    dotsWrap.innerHTML = '';
+    const total = maxSlide() + 1;
+    if (total <= 1) return;
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', `Slide ${i + 1}`);
+      d.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(d);
+    }
+  }
+
+  function goTo(index) {
+    current = Math.max(0, Math.min(index, maxSlide()));
+    const step = cards[0].getBoundingClientRect().width + 24;
+    track.style.transform = `translateX(-${current * step}px)`;
+    dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    if (prevBtn) prevBtn.disabled = current === 0;
+    if (nextBtn) nextBtn.disabled = current >= maxSlide();
+    if (controls) controls.style.visibility = maxSlide() === 0 ? 'hidden' : 'visible';
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
+  if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  window.addEventListener('resize', () => { buildDots(); goTo(Math.min(current, maxSlide())); }, { passive: true });
+
+  buildDots();
+  goTo(0);
+});
+
 // ─── Contact form — async Formspree submit ────────────────────────────────────
 const form = document.getElementById('contactForm');
 
