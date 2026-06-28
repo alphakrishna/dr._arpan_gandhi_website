@@ -42,6 +42,14 @@ if (sections.length && navLinks.length) {
   sections.forEach(section => observer.observe(section));
 }
 
+// ─── Back home arrow — hidden above the fold, fades in once user scrolls down ─
+const backHome = document.querySelector('.back-home');
+if (backHome) {
+  window.addEventListener('scroll', () => {
+    backHome.classList.toggle('visible', window.scrollY > 150);
+  }, { passive: true });
+}
+
 // ─── Back to top button ───────────────────────────────────────────────────────
 const backToTop = document.getElementById('back-to-top');
 

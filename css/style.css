@@ -1059,8 +1059,11 @@ main { flex: 1; }
   background: none;
   border: none;
   color: var(--accent);
-  transition: color 0.2s, transform 0.2s;
+  opacity: 0;
+  pointer-events: none;
+  transition: color 0.2s, transform 0.2s, opacity 0.3s;
 }
+.back-home.visible { opacity: 1; pointer-events: auto; }
 
 .back-home svg { width: 1.5rem; height: 1.5rem; stroke-width: 2.5; }
 
