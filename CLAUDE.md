@@ -11,7 +11,6 @@ A personal portfolio and thought-leadership website for **Dr. Arpan Gandhi**, a 
 
 ### Who Dr. Arpan Gandhi Is
 - 29+ years in diagnostic medicine, healthcare leadership, and medical education
-- Previously at **SRL Diagnostics** and **Agilus Diagnostics**
 - Specializes in ocular pathology, oncology, and advanced diagnostic medicine
 - Has mentored 200+ residents and medical professionals
 - Led M&A of four regional diagnostic centers in tier 2/3 Indian cities
