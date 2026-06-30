@@ -1580,6 +1580,16 @@ main { flex: 1; }
   background: var(--slate-100);
 }
 
+.blog-card-text {
+  border-top: 4px solid var(--accent);
+}
+.blog-card-text .blog-card-body {
+  padding-top: 1.625rem;
+}
+.blog-card-text .blog-card-excerpt {
+  -webkit-line-clamp: 5;
+}
+
 .carousel-controls {
   display: flex;
   align-items: center;
