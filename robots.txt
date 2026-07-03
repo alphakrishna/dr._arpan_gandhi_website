@@ -1,4 +1,11 @@
 User-agent: *
 Allow: /
+Disallow: /404.html
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
 
 Sitemap: https://drarpangandhi.org/sitemap.xml

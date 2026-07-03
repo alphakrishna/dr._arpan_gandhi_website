@@ -1,33 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Core pages -->
   <url>
     <loc>https://drarpangandhi.org/</loc>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/blog</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://drarpangandhi.org/profile.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/blog/diagnostic-startups-fail</loc>
+    <loc>https://drarpangandhi.org/consulting.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://drarpangandhi.org/journey.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drarpangandhi.org/academic.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Blog index -->
+  <url>
+    <loc>https://drarpangandhi.org/blog/</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- What's New posts -->
+  <url>
+    <loc>https://drarpangandhi.org/blog/whats-new-doctors-day-2026.html</loc>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/blog/diagnostic-networks-india</loc>
+    <loc>https://drarpangandhi.org/blog/whats-new-july-2026.html</loc>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+
+  <!-- Technical blog posts -->
+  <url>
+    <loc>https://drarpangandhi.org/blog/technology-healthcare-transformation.html</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/blog/career-pathways-laboratory-medicine</loc>
+    <loc>https://drarpangandhi.org/blog/diagnostic-startups-fail.html</loc>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/blog/labs-need-leaders</loc>
+    <loc>https://drarpangandhi.org/blog/diagnostic-networks-india.html</loc>
+    <lastmod>2026-03-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://drarpangandhi.org/blog/career-pathways-laboratory-medicine.html</loc>
+    <lastmod>2026-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drarpangandhi.org/blog/labs-need-leaders.html</loc>
+    <lastmod>2026-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
