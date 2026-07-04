@@ -142,7 +142,7 @@ document.querySelectorAll('.blog-carousel-outer').forEach(outer => {
   goTo(0);
 });
 
-// ─── Contact form — async Formspree submit ────────────────────────────────────
+// ─── Contact form — async submit to contact.php ──────────────────────────────
 const form = document.getElementById('contactForm');
 
 if (form) {
@@ -153,29 +153,21 @@ if (form) {
     btn.disabled = true;
 
     try {
-      // FormData serialises all named inputs without manual JSON encoding.
-      // Accept: application/json tells Formspree to return JSON instead of
-      // redirecting the page (its default HTML response behaviour).
-      const res = await fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' },
-      });
+      const res  = await fetch(form.action, { method: 'POST', body: new FormData(form) });
+      const data = await res.json();
 
-      if (res.ok) {
-        btn.textContent = 'Sent!';
+      if (data.ok) {
+        btn.textContent = 'Message Sent ✓';
         form.reset();
-        // Reset button label after a brief confirmation window
         setTimeout(() => {
           btn.textContent = 'Send Message';
           btn.disabled = false;
-        }, 3000);
+        }, 4000);
       } else {
         btn.textContent = 'Error — try again';
         btn.disabled = false;
       }
     } catch {
-      // Network failure (offline, CORS block, etc.)
       btn.textContent = 'Error — try again';
       btn.disabled = false;
     }
