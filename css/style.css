@@ -1190,6 +1190,12 @@ main { flex: 1; }
   .consulting-row { gap: 2rem; }
 }
 
+.float-art-right { width: 100%; margin: 0 0 1.5rem 0; }
+@media (min-width: 768px) {
+  .float-art-right { float: right; width: 380px; margin: 0 0 1.5rem 2.5rem; }
+}
+.float-art-right svg { width: 100%; height: auto; display: block; }
+
 .page-section .body-text p {
   color: var(--slate-600);
   font-size: 1.0625rem;
