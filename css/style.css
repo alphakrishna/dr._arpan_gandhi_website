@@ -1876,6 +1876,102 @@ main { flex: 1; }
 
 .btn-primary:hover { background-color: var(--accent-light); }
 
+/* ===== ADVISORY (landing page) ===== */
+.advisory {
+  padding: 5rem 0;
+  background: #f7f5f2;
+}
+.advisory-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.advisory .section-label {
+  font-family: var(--font-nav);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.625rem;
+  display: block;
+}
+.advisory h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--slate-900);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.advisory-intro {
+  font-size: 0.9375rem;
+  color: var(--slate-600);
+  line-height: 1.75;
+  margin-bottom: 0;
+  max-width: 34rem;
+}
+.advisory-divider {
+  width: 3rem;
+  height: 2px;
+  background: var(--accent-light);
+  border-radius: 2px;
+  margin: 1.75rem 0;
+}
+.advisory-logos {
+  display: flex;
+  flex-direction: row;
+  gap: 2.5rem;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+.advisory-logo-link {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.advisory-logo-link:hover { opacity: 0.7; transform: translateY(-2px); }
+.advisory-logo-link img {
+  height: 44px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  display: block;
+}
+.advisory-logo-link:last-child img {
+  height: 88px;
+  max-width: 88px;
+  border-radius: 16px;
+}
+.advisory-logo-link span {
+  font-size: 0.6875rem;
+  color: var(--slate-400);
+  font-family: var(--font-nav);
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-align: center;
+}
+.advisory-logo-dark {
+  background: #1a1a1a;
+  border-radius: 8px;
+  padding: 6px 12px;
+  box-sizing: border-box;
+}
+.advisory-image img {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  border-radius: 20px;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+}
+
 /* ===== RESPONSIVE ===== */
 @media (min-width: 768px) {
   .container { padding-left: 3rem; padding-right: 3rem; }
@@ -1926,8 +2022,23 @@ main { flex: 1; }
   .blog-article .header-image { float: right; width: 52%; max-width: 28rem; margin: 0.25rem 0 1.5rem 2.5rem; }
   .blog-inline-image { float: left; width: 50%; max-width: 26rem; margin: 0.25rem 2.5rem 1.5rem 0; }
 
+  .advisory { padding: 3.5rem 0; }
+  .advisory-grid { grid-template-columns: 0.85fr 1.15fr; grid-template-areas: "image content" "image logos"; gap: 1.25rem 4rem; align-items: start; }
+  .advisory-image { grid-area: image; align-self: stretch; display: flex; }
+  .advisory-image img { height: 100%; max-height: 400px; }
+  .advisory-content { grid-area: content; }
+  .advisory-logos { grid-area: logos; gap: 2.5rem; }
+  .advisory h2 { font-size: 2.25rem; }
+
   .not-found { padding-top: 7rem; padding-bottom: 5rem; }
   .not-found .big-number { font-size: 8rem; }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .advisory-grid { grid-template-columns: 0.9fr 1.1fr; gap: 1rem 2.5rem; }
+  .advisory h2 { font-size: 1.875rem; }
+  .advisory-image img { max-height: 360px; }
+  .advisory-logos { gap: 1.75rem; }
 }
 
 /* Shift background 100px right on mobile to reframe the photo subject on narrow screens */
@@ -1950,6 +2061,21 @@ main { flex: 1; }
   .journey-stat { flex: 0 0 auto; }
   .journey-stat .stat-number { font-size: 1.75rem; }
   .journey-teaser-photo img { max-width: 100%; }
+
+  .advisory { padding: 3rem 0; }
+  .advisory-grid { grid-template-columns: 40% 1fr; grid-template-areas: "image content" "logos logos"; gap: 1rem; align-items: stretch; }
+  .advisory-image { grid-area: image; display: flex; }
+  .advisory-image img { max-height: none; width: 100%; height: 100%; border-radius: 12px; object-fit: cover; object-position: center top; }
+  .advisory-content { grid-area: content; }
+  .advisory h2 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+  .advisory-intro { font-size: 0.8125rem; }
+  .advisory-divider { margin: 1rem 0; }
+  .advisory-logos { grid-area: logos; display: flex; flex-direction: row; flex-wrap: nowrap; gap: 0.75rem; align-items: flex-end; }
+  .advisory-logos .advisory-logo-link:first-child { flex: 0 0 40%; }
+  .advisory-logos .advisory-logo-link:nth-child(2),
+  .advisory-logos .advisory-logo-link:nth-child(3) { flex: 1; }
+  .advisory-logo-link img { height: 28px; max-width: 100px; }
+  .advisory-logo-link:last-child img { height: 72px; max-width: 72px; }
 }
 
 /* Tiny phones (≤ 319px — Galaxy Fold inner) */
