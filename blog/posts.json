@@ -1,0 +1,107 @@
+[
+  {
+    "title": "Precision Medicine: Treating the Right Patient with the Right Therapy",
+    "url": "blog/precision-medicine-laboratory-diagnostics.html",
+    "image": "images/10th_blog.webp",
+    "alt": "Precision Medicine — Treating the Right Patient with the Right Therapy infographic",
+    "tag": "Diagnostics",
+    "date": "August 7, 2026",
+    "dateIso": "2026-08-07",
+    "excerpt": "Precision medicine is moving healthcare beyond one-size-fits-all treatment — integrating genomics, molecular diagnostics, and clinical wisdom to deliver the right therapy to the right patient at the right time.",
+    "fullBanner": true
+  },
+  {
+    "title": "The Science Behind Turnaround Time",
+    "url": "blog/science-behind-turnaround-time.html",
+    "image": "images/9th_blog.webp",
+    "alt": "The Science Behind Turnaround Time — the diagnostic journey infographic",
+    "tag": "Quality",
+    "date": "July 30, 2026",
+    "dateIso": "2026-07-30",
+    "excerpt": "Turnaround time begins the moment a test is ordered and spans every stage of the diagnostic pathway. Understanding its components is what separates consistently excellent laboratories from the rest.",
+    "fullBanner": true
+  },
+  {
+    "title": "Pre-analytical Errors: The Most Preventable Cause of Laboratory Mistakes",
+    "url": "blog/pre-analytical-errors-laboratory.html",
+    "image": "images/8th_blog.webp",
+    "alt": "Pre-analytical errors — the most preventable cause of laboratory mistakes",
+    "tag": "Quality",
+    "date": "July 23, 2026",
+    "dateIso": "2026-07-23",
+    "excerpt": "Nearly 60–70% of laboratory errors occur before a specimen reaches the bench. The most advanced analyser cannot rescue a sample whose quality was compromised before it arrived.",
+    "fullBanner": true
+  },
+  {
+    "title": "Why Great Healthcare Begins Long Before Treatment Starts",
+    "url": "blog/great-healthcare-begins-before-treatment.html",
+    "image": "images/7th_blog.webp",
+    "alt": "Why Great Healthcare Begins Long Before Treatment Starts",
+    "tag": "Quality",
+    "date": "July 16, 2026",
+    "dateIso": "2026-07-16",
+    "excerpt": "Great healthcare begins with confidence that the diagnosis is right—and that confidence is built every day inside high-quality laboratories.",
+    "fullBanner": true
+  },
+  {
+    "title": "Turnaround Time Isn't Everything: Measuring What Really Matters in the Laboratory",
+    "url": "blog/turnaround-time-laboratory.html",
+    "image": "images/6th_blog.webp",
+    "alt": "Turnaround Time Isn't Everything: Measuring What Really Matters in the Laboratory",
+    "tag": "Quality",
+    "date": "July 9, 2026",
+    "dateIso": "2026-07-09",
+    "excerpt": "A report delivered earlier has little value if it cannot be trusted. The best laboratories aim to be the most trusted."
+  },
+  {
+    "title": "Why Technology Alone Cannot Transform Healthcare",
+    "url": "blog/technology-healthcare-transformation.html",
+    "image": "images/5th_blog.webp",
+    "alt": "Why Technology Alone Cannot Transform Healthcare",
+    "tag": "Leadership",
+    "date": "July 2, 2026",
+    "dateIso": "2026-07-02",
+    "excerpt": "Technology is reshaping healthcare — but lasting transformation depends on strong leadership, clear vision, and a culture ready to embrace change.",
+    "fullBanner": true
+  },
+  {
+    "title": "Why Most Diagnostic Startups Fail: Lessons for Founders and Investors",
+    "url": "blog/diagnostic-startups-fail.html",
+    "image": "images/blog-diagnostic-startups.webp",
+    "alt": "Why Most Diagnostic Startups Fail",
+    "tag": "Strategy",
+    "date": "June 25, 2026",
+    "dateIso": "2026-06-25",
+    "excerpt": "The diagnostics sector has never been more exciting — yet many startups still fail. The reason is rarely a lack of innovation."
+  },
+  {
+    "title": "What I Learned Building Diagnostic Networks Across India",
+    "url": "blog/diagnostic-networks-india.html",
+    "image": "images/diagnostic-networks-header.webp",
+    "alt": "What I Learned Building Diagnostic Networks Across India",
+    "tag": "Leadership",
+    "date": "March 2, 2026",
+    "dateIso": "2026-03-02",
+    "excerpt": "Over three decades in diagnostic laboratory medicine, I have had the privilege of working across standalone laboratories and large corporate chains."
+  },
+  {
+    "title": "From Technician to Leader: Career Pathways in Laboratory Medicine",
+    "url": "blog/career-pathways-laboratory-medicine.html",
+    "image": "images/career-pathways-header.webp",
+    "alt": "From Technician to Leader: Career Pathways in Laboratory Medicine",
+    "tag": "Career",
+    "date": "February 20, 2026",
+    "dateIso": "2026-02-20",
+    "excerpt": "Laboratory medicine is often seen as purely technical. Behind every accurate report stands someone whose growth defines the quality of diagnostics."
+  },
+  {
+    "title": "Why Diagnostic Labs Need Leaders, Not Just Managers",
+    "url": "blog/labs-need-leaders.html",
+    "image": "images/labs-need-leaders-header.webp",
+    "alt": "Why Diagnostic Labs Need Leaders, Not Just Managers",
+    "tag": "Leadership",
+    "date": "February 11, 2026",
+    "dateIso": "2026-02-11",
+    "excerpt": "In the last three decades, diagnostic laboratories in India have undergone a remarkable transformation — from small facilities to large corporate networks."
+  }
+]

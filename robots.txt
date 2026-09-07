@@ -8,4 +8,4 @@ Crawl-delay: 10
 User-agent: SemrushBot
 Crawl-delay: 10
 
-Sitemap: https://drarpangandhi.org/sitemap.xml
+Sitemap: https://drarpangandhi.com/sitemap.xml

@@ -203,6 +203,22 @@ Always use these tokens — never hardcode colours or fonts.
 4. Add card to `blog/index.html`
 5. Add URL to `sitemap.xml`
 
+### Automated Homepage "Latest Writing" Sync
+
+The homepage cards are generated from `blog/posts.json` and remain static HTML in `index.html`. This means there is **no client-side fetch, no added runtime JavaScript, and no SEO loss**: search engines and visitors receive the full card markup immediately.
+
+When publishing a new blog post, complete this executable, verifiable checklist:
+
+1. [ ] Create and test the new `blog/<slug>.html` page, including its title, description, canonical/OG tags, and banner image.
+2. [ ] Upload its image to `images/` and verify the exact filename and path.
+3. [ ] Add one entry at the top of `blog/posts.json`: `title`, `url`, `image`, `alt`, `tag`, `date`, `dateIso` (`YYYY-MM-DD`), and `excerpt`. Add `"fullBanner": true` only when the card must preserve a 16:9 banner without cropping.
+4. [ ] Run `powershell -ExecutionPolicy Bypass -File .\scripts\sync-blog-cards.ps1` from the project root. Expected output: `Updated <number> Latest Writing cards in index.html.`
+5. [ ] Verify the new card is first in `index.html`: `rg -n "<slug>|BLOG_CARDS_START" index.html`.
+6. [ ] Open the homepage at desktop and mobile widths. Confirm the new card links correctly, its image loads, the image is not distorted/cropped unexpectedly, and carousel controls still work.
+7. [ ] Add the post URL to `sitemap.xml`, then upload the changed page, image, `blog/posts.json`, `index.html`, and `sitemap.xml` together.
+
+Do not replace the generated cards between `<!-- BLOG_CARDS_START -->` and `<!-- BLOG_CARDS_END -->` by hand; re-run the script after editing `blog/posts.json`.
+
 **Update Formspree endpoint**
 - Find `<form action="https://formspree.io/f/xcontact">` in `index.html` and `academic.html`
 - Replace `xcontact` with the confirmed hash from Dr. Gandhi
@@ -219,3 +235,10 @@ Always use these tokens — never hardcode colours or fonts.
 | Formspree endpoint | Contact form + Academic form |
 | 3 LinkedIn post URLs | LinkedIn credibility strip |
 | Nav label — "PROFILE" or "ABOUT"? | Nav update pass |
+
+### How to get the Formspree endpoint
+1. Go to **formspree.io** and sign up / log in with Dr. Gandhi's email
+2. Click **New Form** → name it (e.g. "Contact")
+3. Copy the endpoint hash — e.g. `https://formspree.io/f/xabcdefg` → hash is `xabcdefg`
+4. In `index.html` and `academic.html`, find `action="/contact.php"` and replace with `action="https://formspree.io/f/<hash>"`
+5. Free plan allows 50 submissions/month

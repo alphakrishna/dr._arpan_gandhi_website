@@ -3,43 +3,43 @@
 
   <!-- Core pages -->
   <url>
-    <loc>https://drarpangandhi.org/</loc>
+    <loc>https://drarpangandhi.com/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/profile.html</loc>
+    <loc>https://drarpangandhi.com/profile.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/consulting.html</loc>
+    <loc>https://drarpangandhi.com/consulting.html</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/laboratory-consulting.html</loc>
+    <loc>https://drarpangandhi.com/laboratory-consulting.html</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/journey.html</loc>
+    <loc>https://drarpangandhi.com/journey.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/mentorship-training.html</loc>
+    <loc>https://drarpangandhi.com/mentorship-training.html</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/academic.html</loc>
+    <loc>https://drarpangandhi.com/academic.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -47,7 +47,7 @@
 
   <!-- Blog index -->
   <url>
-    <loc>https://drarpangandhi.org/blog/</loc>
+    <loc>https://drarpangandhi.com/blog/</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -55,13 +55,45 @@
 
   <!-- What's New posts -->
   <url>
-    <loc>https://drarpangandhi.org/blog/whats-new-doctors-day-2026.html</loc>
+    <loc>https://drarpangandhi.com/pathiq-editorial-board.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://drarpangandhi.com/blog/whats-new-steerx-2026.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- DRAFT — uncomment to publish
+  <url>
+    <loc>https://drarpangandhi.com/blog/whats-new-nexora-journey-2026.html</loc>
+    <lastmod>2026-07-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  -->
+  <url>
+    <loc>https://drarpangandhi.com/blog/whats-new-healthy-aging-osteoporosis.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://drarpangandhi.com/blog/whats-new-ai-conclave-2026.html</loc>
+    <lastmod>2026-07-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://drarpangandhi.com/blog/whats-new-doctors-day-2026.html</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/blog/whats-new-july-2026.html</loc>
+    <loc>https://drarpangandhi.com/blog/whats-new-july-2026.html</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -69,31 +101,61 @@
 
   <!-- Technical blog posts -->
   <url>
-    <loc>https://drarpangandhi.org/blog/technology-healthcare-transformation.html</loc>
+    <loc>https://drarpangandhi.com/blog/precision-medicine-laboratory-diagnostics.html</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drarpangandhi.com/blog/science-behind-turnaround-time.html</loc>
+    <lastmod>2026-07-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drarpangandhi.com/blog/pre-analytical-errors-laboratory.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drarpangandhi.com/blog/great-healthcare-begins-before-treatment.html</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drarpangandhi.com/blog/turnaround-time-laboratory.html</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://drarpangandhi.com/blog/technology-healthcare-transformation.html</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/blog/diagnostic-startups-fail.html</loc>
+    <loc>https://drarpangandhi.com/blog/diagnostic-startups-fail.html</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/blog/diagnostic-networks-india.html</loc>
+    <loc>https://drarpangandhi.com/blog/diagnostic-networks-india.html</loc>
     <lastmod>2026-03-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/blog/career-pathways-laboratory-medicine.html</loc>
+    <loc>https://drarpangandhi.com/blog/career-pathways-laboratory-medicine.html</loc>
     <lastmod>2026-02-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://drarpangandhi.org/blog/labs-need-leaders.html</loc>
+    <loc>https://drarpangandhi.com/blog/labs-need-leaders.html</loc>
     <lastmod>2026-02-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

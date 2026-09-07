@@ -101,6 +101,11 @@ document.querySelectorAll('.blog-carousel-outer').forEach(outer => {
   if (!cards.length) return;
 
   let current = 0;
+  let cardStep = 0;
+
+  function updateCardStep() {
+    cardStep = cards[0].getBoundingClientRect().width + 24;
+  }
 
   function visibleCount() {
     if (window.innerWidth >= 1024) return Math.min(3, cards.length);
@@ -125,8 +130,7 @@ document.querySelectorAll('.blog-carousel-outer').forEach(outer => {
 
   function goTo(index) {
     current = Math.max(0, Math.min(index, maxSlide()));
-    const step = cards[0].getBoundingClientRect().width + 24;
-    track.style.transform = `translateX(-${current * step}px)`;
+    track.style.transform = `translateX(-${current * cardStep}px)`;
     dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === current));
     if (prevBtn) prevBtn.disabled = current === 0;
     if (nextBtn) nextBtn.disabled = current >= maxSlide();
@@ -136,13 +140,14 @@ document.querySelectorAll('.blog-carousel-outer').forEach(outer => {
   if (prevBtn) prevBtn.addEventListener('click', () => goTo(current - 1));
   if (nextBtn) nextBtn.addEventListener('click', () => goTo(current + 1));
 
-  window.addEventListener('resize', () => { buildDots(); goTo(Math.min(current, maxSlide())); }, { passive: true });
+  window.addEventListener('resize', () => { updateCardStep(); buildDots(); goTo(Math.min(current, maxSlide())); }, { passive: true });
 
+  updateCardStep();
   buildDots();
   goTo(0);
 });
 
-// ─── Contact form — async submit to contact.php ──────────────────────────────
+// ─── Contact form — async submit via Web3Forms ───────────────────────────────
 const form = document.getElementById('contactForm');
 
 if (form) {
@@ -156,7 +161,7 @@ if (form) {
       const res  = await fetch(form.action, { method: 'POST', body: new FormData(form) });
       const data = await res.json();
 
-      if (data.ok) {
+      if (data.success) {
         btn.textContent = 'Message Sent ✓';
         form.reset();
         setTimeout(() => {
